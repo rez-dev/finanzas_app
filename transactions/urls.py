@@ -9,9 +9,12 @@ router.register(r'categories', views.CategoryViewSet,'categories')
 router.register(r'users', views.UserViewSet,'users')
 router.register(r'cards', views.CardViewSet,'cards')
 router.register(r'installments', views.InstallmentsViewSet,'installments')
+# router.register(r'getUserByName', views.getUserByName,'getUserByName')
+# router.register(r'getTransactionsByUser', views.getTransactionsByUser,'getTransactionsByUser')
 
 urlpatterns = [
-    path("api/v1/",include(router.urls)),
-    path('docs/', include_docs_urls(title='Finanzas API'))
+    path("api/",include(router.urls)),
+    path('docs/', include_docs_urls(title='Finanzas API')),
+    # path('api/v1/transactions/', views.getTransactionsByUser.as_view({'get': 'list'}), name='get_transactions_by_user'),
 ]
 
